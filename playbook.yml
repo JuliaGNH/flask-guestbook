@@ -1,0 +1,18 @@
+---
+- name: Setup guestbook application
+  hosts: web
+  tasks:
+    # - name: Install dependencies
+    #   apt:
+    # - name: Install flask
+    #   pip:
+    # - name: Download guestbook source code
+    #   git:
+    - name: Check if application is running
+      shell: "ps -ef |grep -v grep | grep -w flask |awk '{print $2}'"
+      register: process_id
+    - name: Stop the application
+      shell: "kill {{ process_id.stdout }}"
+      when: process_id.stdout != ""
+    # - name: Start the application
+    #   shell:
