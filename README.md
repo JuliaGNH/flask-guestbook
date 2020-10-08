@@ -21,7 +21,7 @@ Install python dependencies
     pip install flask-sqlalchemy
 
 ## 3. Download the application
-git clone https://github.com/ameade/flask-guestbook /opt/flask-guestbook
+git clone https://github.com/jrrickerson/flask-guestbook /opt/flask-guestbook
 
 ## 4. Start Web Server
 Ensure the application is not already running
@@ -45,7 +45,8 @@ Start web server in a background process
     apt-get install -y mysql-server mysql-client
 
  Allow any host to connect
- sed -i "s/.*bind-address.*/bind-address = 0.0.0.0/" /etc/mysql/mariadb.conf.d/50-server.cnf
+
+    sed -i "s/.*bind-address.*/bind-address = 0.0.0.0/" /etc/mysql/mysql.conf.d/mysqld.cnf
 
 ## 2. Start Database Service
   - Start the database service
