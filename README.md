@@ -21,12 +21,15 @@ Install python dependencies
     pip install flask-sqlalchemy
 
 ## 3. Download the application
-git clone https://github.com/jrrickerson/flask-guestbook /opt/flask-guestbook
+    git clone https://github.com/jrrickerson/flask-guestbook /opt/flask-guestbook
 
 ## 4. Start Web Server
 Ensure the application is not already running
-  kill $(ps -ef |grep -v grep | grep -w flask |awk '{print $2}')
+  
+    kill $(ps -ef |grep -v grep | grep -w flask |awk '{print $2}')
+
 Start web server in a background process
+
     FLASK_APP=/opt/flask-guestbook/app.py nohup flask run -h 0.0.0.0 -p 8080 &
 
 ## 5. Test
